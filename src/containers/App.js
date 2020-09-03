@@ -12,18 +12,21 @@ import {
 function App() {
     return (
         <div className="App">
-            <Header/>
             <main className="fullSize alignCenter">
-                <Router>
-                    <Switch>
-                        <Route path="/umowa-o-dzielo">
-                            <ContractWork/>
-                        </Route>
-                        <Route path="/">
-                            <Main/>
-                        </Route>
-                    </Switch>
-                </Router>
+                <div className="wrapper">
+                    <Router>
+                        <Switch>
+                            <Route path="/umowa-o-dzielo">
+                                <Header name="Umowa o dzieło" />
+                                <ContractWork/>
+                            </Route>
+                            <Route path="/">
+                                <Header name="Kalkulator dla przedsiębiorcy" backUrl="/" isHome={true} />
+                                <Main/>
+                            </Route>
+                        </Switch>
+                    </Router>
+                </div>
             </main>
             <Footer/>
         </div>

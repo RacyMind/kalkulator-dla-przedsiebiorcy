@@ -153,6 +153,7 @@ body{
     max-width: 700px;
     width:100%;
     box-sizing: border-box;
+    text-align: left;
 }
 h1{
     font-size:20px;
@@ -177,6 +178,12 @@ header .wrapper{
     background: url('../images/header.jpg') #d12526 bottom no-repeat;
     background-size: 100% auto;
     padding:20px;
+}
+header h1{
+    text-align: left;
+}
+header.subpage .back{
+    float: left;
 }
 header.subpage h1{
     float: right;

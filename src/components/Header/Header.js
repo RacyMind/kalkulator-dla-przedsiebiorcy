@@ -1,14 +1,35 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const Header = () => (
-    <header className="fullSize subpage">
-        <div className="wrapper">
-            <a className="back" href="https://kalkulator.racymind.pl/web/"><img
-                src={process.env.PUBLIC_URL +'/images/back.gif'} alt="Wstecz"/></a>
 
-            <h1>Umowa o dzieło</h1>
-        </div>
-    </header>
-)
+class Header extends React.Component {
+    render() {
+        if (this.props.isHome) {
+            return (
+                <header className="fullSize">
+                    <div className="wrapper">
+                        <h1>{this.props.name}</h1>
+                    </div>
+                </header>
+            );
+        } else {
+            return (
+                <header className="fullSize subpage">
+                    <div className="wrapper">
+                        <Link className="back" to={this.props.backUrl}><img
+                            src={process.env.PUBLIC_URL + '/images/back.gif'} alt="Wstecz"/></Link>
+                        <h1>{this.props.name}</h1>
+                        <div style={{clear: 'both'}}></div>
+                    </div>
+                </header>
+            );
+        }
+    }
+}
+
+Header.defaultProps = {
+    backUrl: "/",
+    isHome: false
+};
 
 export default Header
