@@ -7,7 +7,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
 function App() {
@@ -15,14 +14,16 @@ function App() {
         <div className="App">
             <Header/>
             <main className="fullSize alignCenter">
-                <Switch>
-                    <Route path="/umowa-o-dzielo">
-                        <ContractWork/>
-                    </Route>
-                    <Route path="/">
-                        <Main/>
-                    </Route>
-                </Switch>
+                <Router>
+                    <Switch>
+                        <Route path="/umowa-o-dzielo">
+                            <ContractWork/>
+                        </Route>
+                        <Route path="/">
+                            <Main/>
+                        </Route>
+                    </Switch>
+                </Router>
             </main>
             <Footer/>
         </div>
