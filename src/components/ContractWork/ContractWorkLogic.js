@@ -1,5 +1,5 @@
 import React from "react";
-import staticData from '../shared/variables';
+import staticData from '../../shared/variables';
 
 class ContractWorkLogic {
     /**
@@ -101,7 +101,10 @@ class ContractWorkLogic {
         this.calculateTaxAmount();
         this.gross=this.net + this.taxAmount;
     }
-    
+
+    /**
+     * Obliczenia, gdy podano brutto
+     */
     calculateWhenGrossGet() {
         if(this.gross<=200)
             this.rateExpenses=0;

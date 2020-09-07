@@ -1,6 +1,8 @@
 import React from "react";
 import ContractWorkForm from "./ContractWorkForm";
 import ContractWorkSummary from "./ContractWorkSummary";
+import Advert from "../Advert/Advert";
+import ContractWorkLogic from "./ContractWorkLogic";
 
 class ContractWork extends React.Component {
     constructor(props) {
@@ -11,11 +13,23 @@ class ContractWork extends React.Component {
                 typeAmount: 'net',
                 expenses: '0.2',
             },
+            model: new ContractWorkLogic(),
         };
     }
     savedForm = (data) => {
-        this.setState({formData:data});
-        console.log(this.state.formData);
+        let model = this.state.model;
+        let amount = parseFloat(data.amount);
+        let expenses = parseFloat(data.expenses);
+        model.rateExpenses=expenses;
+        if(data.typeAmount==='net') {
+            model.net=amount;
+            model.calculateWhenNetGet();
+        }
+        if(data.typeAmount==='gross') {
+            model.gross=amount;
+            model.calculateWhenGrossGet();
+        }
+        this.setState({model:model});
     }
     render() {
         return(
@@ -25,11 +39,8 @@ class ContractWork extends React.Component {
                 <h2>Wypełnij formularz</h2>
             </div>
             <ContractWorkForm parentCallback={this.savedForm} />
-            <div className="header-section background4">
-                <img src={process.env.PUBLIC_URL + '/images/ico2.png'} alt="Podsumowanie"/>
-                <h2>Podsumowanie</h2>
-            </div>
-            <ContractWorkSummary amount={this.state.formData.amount} typeAmount={this.state.formData.typeAmount} expenses={this.state.formData.expenses} />
+            <Advert />
+            <ContractWorkSummary model={this.state.model} />
 
         </div>
         );
