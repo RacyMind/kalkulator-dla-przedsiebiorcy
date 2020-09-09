@@ -8,28 +8,33 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import Theme from "./Theme";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 
 function App() {
     return (
-        <div className="App">
-            <main className="fullSize alignCenter">
-                <div className="wrapper">
-                    <Router>
-                        <Switch>
-                            <Route path="/umowa-o-dzielo">
-                                <Header name="Umowa o dzieło" />
-                                <ContractWork/>
-                            </Route>
-                            <Route path="/">
-                                <Header name="Kalkulator dla przedsiębiorcy" backUrl="/" isHome={true} />
-                                <Main/>
-                            </Route>
-                        </Switch>
-                    </Router>
-                </div>
-            </main>
-            <Footer/>
-        </div>
+        <Theme>
+            <div className="App">
+                <Container maxWidth="sm" style={{paddingLeft:0, paddingRight:0}}>
+                    <Grid xs={12}>
+                        <Router>
+                            <Switch>
+                                <Route path="/umowa-o-dzielo">
+                                    <Header name="Umowa o dzieło"/>
+                                    <ContractWork/>
+                                </Route>
+                                <Route path="/">
+                                    <Header name="Kalkulator dla przedsiębiorcy" backUrl="/" isHome={true}/>
+                                    <Main/>
+                                </Route>
+                            </Switch>
+                        </Router>
+                    </Grid>
+                </Container>
+                <Footer/>
+            </div>
+        </Theme>
     );
 }
 

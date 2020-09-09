@@ -8,11 +8,6 @@ class ContractWork extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            formData: {
-                amount: 0,
-                typeAmount: 'net',
-                expenses: '0.2',
-            },
             model: new ContractWorkLogic(),
         };
     }
@@ -34,14 +29,9 @@ class ContractWork extends React.Component {
     render() {
         return(
         <div>
-            <div className="header-section background4">
-                <img src={process.env.PUBLIC_URL + '/images/ico1.png'} alt="Wypełnij formularz"/>
-                <h2>Wypełnij formularz</h2>
-            </div>
             <ContractWorkForm parentCallback={this.savedForm} />
             <Advert />
             <ContractWorkSummary model={this.state.model} />
-
         </div>
         );
     }

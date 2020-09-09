@@ -1,11 +1,12 @@
 import React from "react";
 import {formatAsCurrency} from '../../shared/utils/helpers'
-
+import Grid from "@material-ui/core/Grid";
+import CreditCardIcon from '@material-ui/icons/CreditCard';
 const ContractWorkSummary = ({model}) => {
     return(
-        <div>
+        <Grid xs={12}>
             <div className="header-section background4">
-                <img src={process.env.PUBLIC_URL + '/images/ico2.png'} alt="Podsumowanie"/>
+                <CreditCardIcon htmlColor="#ffffff"/>
                 <h2>Podsumowanie</h2>
             </div>
             <table>
@@ -32,7 +33,7 @@ const ContractWorkSummary = ({model}) => {
                 </tr>
                 </tbody>
             </table>
-        </div>
+        </Grid>
     )
 }
 export default ContractWorkSummary

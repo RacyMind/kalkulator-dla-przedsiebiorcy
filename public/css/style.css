@@ -150,7 +150,6 @@ body{
     background: #ebf4f6;
 }
 .wrapper{
-    max-width: 700px;
     width:100%;
     box-sizing: border-box;
     text-align: left;
@@ -323,7 +322,7 @@ nav{
     padding:8px 20px;
     box-sizing: border-box;
 }
-.header-section img{
+.header-section img, .header-section svg{
     margin: 0 10px 0 0;
     vertical-align: middle;
 }
@@ -360,19 +359,6 @@ nav{
 }
 label{
     vertical-align: middle;
-}
-input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]), select {
-    width:49%;
-    height: 40px;
-    padding: 0 5px;
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    border:3px solid #eef6f8;
-    border-radius: 7px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color:#000000;
 }
 input[type="radio"], input[type="checkbox"] {
     vertical-align: middle;
