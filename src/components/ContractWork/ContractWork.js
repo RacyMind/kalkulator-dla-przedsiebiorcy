@@ -30,7 +30,7 @@ class ContractWork extends React.Component {
         }
         if(model.gross<=200)
             this.setState({snackbar1:true});
-        if(model.rateExpenses=0.5 && model.expenses >= model.maxExpenses)
+        if(model.rateExpenses==0.5 && model.expenses >= model.maxExpenses)
             this.setState({snackbar2:true});
 
 
