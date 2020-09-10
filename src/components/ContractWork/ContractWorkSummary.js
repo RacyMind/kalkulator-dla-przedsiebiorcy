@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 const ContractWorkSummary = ({model}) => {
     return(
-        <Grid xs={12}>
+        <Grid xs={12} item={true}>
             <div className="header-section background4">
                 <CreditCardIcon htmlColor="#ffffff"/>
                 <h2>Podsumowanie</h2>

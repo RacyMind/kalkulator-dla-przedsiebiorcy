@@ -17,7 +17,7 @@ function App() {
         <Theme>
             <div className="App">
                 <Container maxWidth="sm" style={{paddingLeft:0, paddingRight:0}}>
-                    <Grid xs={12}>
+                    <Grid xs={12} item={true}>
                         <Router>
                             <Switch>
                                 <Route path="/umowa-o-dzielo">

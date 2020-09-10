@@ -31,12 +31,12 @@ class ContractWorkForm extends React.Component {
 
     render() {
         return (
-            <Grid xs={12}>
-                <Grid xs={12} className="header-section background4">
+            <Grid xs={12} item={true}>
+                <Grid xs={12} item={true} className="header-section background4">
                     <DescriptionOutlinedIcon htmlColor="#ffffff" name="Wypełnij formularz"/>
                     <h2>Wypełnij formularz</h2>
                 </Grid>
-                <Grid xs={12} className="container">
+                <Grid xs={12} item={true} className="container">
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <FormControl
                             component="fieldset"
@@ -59,16 +59,14 @@ class ContractWorkForm extends React.Component {
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
-
                                 InputProps={{
                                     startAdornment: <InputAdornment position="start">zł</InputAdornment>,
                                 }}
-                                color="color4"
                                 variant="outlined"
                             />
                         </FormControl>
                         <Grid container margin="normal">
-                            <Grid sm={6} xs={12}>
+                            <Grid sm={6} xs={12} item={true}>
                                 <FormControl
                                     component="fieldset"
                                     margin="normal"
@@ -94,7 +92,7 @@ class ContractWorkForm extends React.Component {
                                     </RadioGroup>
                                 </FormControl>
                             </Grid>
-                            <Grid sm={6} xs={12}>
+                            <Grid sm={6} xs={12} item={true}>
                                 <FormControl
                                     component="fieldset"
                                     margin="normal"
