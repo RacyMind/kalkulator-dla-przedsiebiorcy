@@ -1,39 +1,46 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
-import {TextField, InputAdornment} from "@material-ui/core";
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import Button from "@material-ui/core/Button";
+import React from 'react'
+import Grid from '@material-ui/core/Grid'
+import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined'
+import { TextField, InputAdornment } from '@material-ui/core'
+import Radio from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormControl from '@material-ui/core/FormControl'
+import FormLabel from '@material-ui/core/FormLabel'
+import Button from '@material-ui/core/Button'
 
 class ContractWorkForm extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             amount: 0,
             typeAmount: 'net',
             expenses: '0.2',
-        };
+        }
     }
 
     handleChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
-        });
+            [event.target.name]: event.target.value,
+        })
     }
     handleSubmit = (event) => {
-        event.preventDefault();
-        this.props.parentCallback(this.state);
+        event.preventDefault()
+        this.props.parentCallback(this.state)
     }
 
     render() {
         return (
             <Grid xs={12} item={true}>
-                <Grid xs={12} item={true} className="header-section background4">
-                    <DescriptionOutlinedIcon htmlColor="#ffffff" name="Wypełnij formularz"/>
+                <Grid
+                    xs={12}
+                    item={true}
+                    className="header-section background4"
+                >
+                    <DescriptionOutlinedIcon
+                        htmlColor="#ffffff"
+                        name="Wypełnij formularz"
+                    />
                     <h2>Wypełnij formularz</h2>
                 </Grid>
                 <Grid xs={12} item={true} className="container">
@@ -41,10 +48,11 @@ class ContractWorkForm extends React.Component {
                         <FormControl
                             component="fieldset"
                             margin="normal"
-                            fullWidth={true}>
+                            fullWidth={true}
+                        >
                             <TextField
                                 inputProps={{
-                                    step: "0.01",
+                                    step: '0.01',
                                     min: 0,
                                     autoFocus: true,
                                 }}
@@ -60,7 +68,11 @@ class ContractWorkForm extends React.Component {
                                     shrink: true,
                                 }}
                                 InputProps={{
-                                    startAdornment: <InputAdornment position="start">zł</InputAdornment>,
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            zł
+                                        </InputAdornment>
+                                    ),
                                 }}
                                 variant="outlined"
                             />
@@ -70,23 +82,36 @@ class ContractWorkForm extends React.Component {
                                 <FormControl
                                     component="fieldset"
                                     margin="normal"
-                                    fullWidth={true}>
-                                    <FormLabel component="legend">Wynagrodzenie</FormLabel>
-                                    <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                                    fullWidth={true}
+                                >
+                                    <FormLabel component="legend">
+                                        Wynagrodzenie
+                                    </FormLabel>
+                                    <RadioGroup
+                                        row
+                                        aria-label="position"
+                                        name="position"
+                                        defaultValue="top"
+                                    >
                                         <FormControlLabel
-                                            control={<Radio color="primary"/>}
+                                            control={<Radio color="primary" />}
                                             label="netto"
                                             value="net"
                                             name="typeAmount"
-                                            checked={this.state.typeAmount === "net"}
+                                            checked={
+                                                this.state.typeAmount === 'net'
+                                            }
                                             onChange={this.handleChange}
                                         />
                                         <FormControlLabel
-                                            control={<Radio color="primary"/>}
+                                            control={<Radio color="primary" />}
                                             label="brutto"
                                             value="gross"
                                             name="typeAmount"
-                                            checked={this.state.typeAmount === "gross"}
+                                            checked={
+                                                this.state.typeAmount ===
+                                                'gross'
+                                            }
                                             onChange={this.handleChange}
                                         />
                                     </RadioGroup>
@@ -96,36 +121,54 @@ class ContractWorkForm extends React.Component {
                                 <FormControl
                                     component="fieldset"
                                     margin="normal"
-                                    fullWidth={true}>
-                                    <FormLabel component="legend">Koszty uzyskania przychodu</FormLabel>
-                                    <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                                    fullWidth={true}
+                                >
+                                    <FormLabel component="legend">
+                                        Koszty uzyskania przychodu
+                                    </FormLabel>
+                                    <RadioGroup
+                                        row
+                                        aria-label="position"
+                                        name="position"
+                                        defaultValue="top"
+                                    >
                                         <FormControlLabel
-                                            control={<Radio color="primary"/>}
+                                            control={<Radio color="primary" />}
                                             label="20%"
                                             value="0.2"
                                             name="expenses"
-                                            checked={this.state.expenses === "0.2"}
+                                            checked={
+                                                this.state.expenses === '0.2'
+                                            }
                                             onChange={this.handleChange}
                                         />
                                         <FormControlLabel
-                                            control={<Radio color="primary"/>}
+                                            control={<Radio color="primary" />}
                                             label="50%"
                                             value="0.5"
                                             name="expenses"
-                                            checked={this.state.expenses === "0.5"}
+                                            checked={
+                                                this.state.expenses === '0.5'
+                                            }
                                             onChange={this.handleChange}
                                         />
                                     </RadioGroup>
                                 </FormControl>
                             </Grid>
                         </Grid>
-                        <Button variant="contained" color="primary" size="large" fullWidth={true} type="submit">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            fullWidth={true}
+                            type="submit"
+                        >
                             Oblicz
                         </Button>
                     </form>
                 </Grid>
             </Grid>
-        );
+        )
     }
 }
 
