@@ -7,6 +7,9 @@ const Menu = () => (
             <li className="item4">
                 <Link to="/umowa-o-dzielo">Umowa o dzieło</Link>
             </li>
+            <li className="item5">
+                <Link to="/faktura-vat">Faktura VAT</Link>
+            </li>
             <li className="item6">
                 <Link to="/kalkulator-odsetek">Kalkulator odsetek</Link>
             </li>

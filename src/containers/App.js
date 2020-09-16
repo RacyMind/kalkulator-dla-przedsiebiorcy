@@ -4,6 +4,7 @@ import Header from '../components/Header/Header'
 import Main from '../components/Main/Main'
 import ContractWork from '../components/ContractWork/ContractWork'
 import Interest from '../components/Interest/Interest'
+import Invoice from '../components/Invoice/Invoice'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Theme from './Theme'
 import Container from '@material-ui/core/Container'
@@ -23,6 +24,10 @@ function App() {
                                 <Route path="/umowa-o-dzielo">
                                     <Header name="Umowa o dzieło" />
                                     <ContractWork />
+                                </Route>
+                                <Route path="/faktura-vat">
+                                    <Header name="Faktura VAT" />
+                                    <Invoice />
                                 </Route>
                                 <Route path="/kalkulator-odsetek">
                                     <Header name="Kalkulator odsetek" />
